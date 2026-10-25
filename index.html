@@ -3,27 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maxi Pagliero</title>
+    <title>Maxi Pagliero — Data Scientist</title>
+    <meta name="description" content="Maxi Pagliero — data scientist focused on games, analytics and anti-cheat.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg: yellow;
+            --ink: #111;
+            --card: #fffbe0;
+            --muted: #444;
+        }
+        * { box-sizing: border-box; }
         body {
             margin: 0;
-            height: 100vh;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: "Inter", system-ui, sans-serif;
+            line-height: 1.55;
+        }
+        main {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 16px 64px;
+        }
+        a { color: var(--ink); }
+        header {
+            min-height: 80vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: yellow;
+            text-align: center;
         }
-        h1 { 
+        h1 {
             font-family: "Creepster", system-ui;
             font-size: clamp(8rem, 20vw + 4rem, 12rem);
-};
+            font-weight: 400;
+            margin: 0;
+            line-height: 1;
         }
+        .tagline {
+            font-size: clamp(1.1rem, 2vw + 0.6rem, 1.5rem);
+            font-weight: 600;
+            margin: 0.5rem 0 1.5rem;
+        }
+        .button {
+            display: inline-block;
+            padding: 0.7rem 1.3rem;
+            border: 3px solid var(--ink);
+            font-weight: 800;
+            text-decoration: none;
+            background: var(--ink);
+            color: var(--bg);
+        }
+        .button.ghost { background: transparent; color: var(--ink); }
+        .buttons { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; }
+        h2 {
+            font-family: "Creepster", system-ui;
+            font-weight: 400;
+            font-size: clamp(2.2rem, 4vw + 1rem, 3.2rem);
+            margin: 3rem 0 1rem;
+        }
+        h3 { margin: 0 0 0.25rem; font-size: 1.3rem; }
+        .card {
+            background: var(--card);
+            border: 3px solid var(--ink);
+            box-shadow: 6px 6px 0 var(--ink);
+            padding: 1.5rem;
+            margin-bottom: 1.75rem;
+        }
+        .status {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 2px solid var(--ink);
+            padding: 0.1rem 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .figures {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .figures img {
+            width: 100%;
+            height: auto;
+            border: 2px solid var(--ink);
+            background: #fff;
+        }
+        ul { padding-left: 1.2rem; margin: 0.5rem 0; }
+        .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+        .tags span {
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: var(--ink);
+            color: var(--bg);
+            padding: 0.15rem 0.55rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
+        }
+        .grid .card { margin-bottom: 0; }
+        .muted { color: var(--muted); }
+        footer { text-align: center; margin-top: 4rem; font-weight: 600; }
     </style>
 </head>
 <body>
-    <h1>MAX</h1>
+<main>
+    <header>
+        <h1>MAX</h1>
+        <p class="tagline">Data Scientist · Games · Analytics · Anti-Cheat</p>
+        <div class="buttons">
+            <a class="button" href="https://github.com/maxipagliero/game_data_science_insights">View the portfolio repo</a>
+            <a class="button ghost" href="https://github.com/maxipagliero">GitHub</a>
+        </div>
+    </header>
+
+    <section>
+        <h2>Featured work</h2>
+        <div class="card">
+            <h3><a href="https://github.com/maxipagliero/game_data_science_insights">game_data_science_insights</a></h3>
+            <p>A games-focused data science portfolio built to mirror real commercial and anti-cheat data science work: analysing in-game economies and monetization, detecting suspicious player behaviour with ML, building end-to-end data pipelines, and shipping internal tools that help teams act on data.</p>
+        </div>
+
+        <div class="card">
+            <span class="status">✅ Complete</span>
+            <h3>In-Game Economy &amp; Monetization Analytics</h3>
+            <p>End-to-end analytics on a simulated free-to-play game economy, from data generation and SQL schema design through KPI calculation to a written report.</p>
+            <ul>
+                <li>PostgreSQL schema with raw and curated layers</li>
+                <li>KPI views for DAU, revenue, ARPU/ARPPU, retention cohorts and conversion funnel</li>
+                <li>EDA across users, sessions, items and economy events, plus a pandas reimplementation of every SQL KPI</li>
+                <li>Written analysis of findings with five charts</li>
+            </ul>
+            <div class="figures">
+                <img src="https://raw.githubusercontent.com/maxipagliero/game_data_science_insights/main/project1_game_economy_analytics/reports/figures/retention_heatmap.png" alt="Retention cohort heatmap" loading="lazy">
+                <img src="https://raw.githubusercontent.com/maxipagliero/game_data_science_insights/main/project1_game_economy_analytics/reports/figures/conversion_funnel.png" alt="Player conversion funnel" loading="lazy">
+            </div>
+            <a href="https://github.com/maxipagliero/game_data_science_insights/tree/main/project1_game_economy_analytics">Explore the project →</a>
+            <div class="tags"><span>PostgreSQL</span><span>Python</span><span>pandas</span><span>matplotlib</span><span>seaborn</span></div>
+        </div>
+
+        <div class="card">
+            <span class="status">✅ Complete</span>
+            <h3>Anti-Cheat Behaviour Detection</h3>
+            <p>A full ML pipeline that flags cheating players from match telemetry: 10k match events across 800 players, about 5% of them cheaters.</p>
+            <ul>
+                <li>SQL player aggregates and feature build, then feature engineering in notebooks</li>
+                <li>Trained and compared Logistic Regression (baseline), Random Forest and XGBoost</li>
+                <li>XGBoost scored the highest ROC-AUC and F1 on the held-out test set</li>
+                <li>Evaluated with ROC and precision-recall curves, confusion matrices and feature importances</li>
+                <li>Production strategy report for rolling the detection out</li>
+            </ul>
+            <div class="figures">
+                <img src="https://raw.githubusercontent.com/maxipagliero/game_data_science_insights/main/project3_anti_cheat_detection/reports/figures/roc_curves.png" alt="ROC curves for the three models" loading="lazy">
+                <img src="https://raw.githubusercontent.com/maxipagliero/game_data_science_insights/main/project3_anti_cheat_detection/reports/figures/feature_importance_xgb.png" alt="XGBoost feature importances" loading="lazy">
+            </div>
+            <a href="https://github.com/maxipagliero/game_data_science_insights/tree/main/project3_anti_cheat_detection">Explore the project →</a>
+            <div class="tags"><span>PostgreSQL</span><span>Python</span><span>scikit-learn</span><span>XGBoost</span><span>pandas</span><span>joblib</span></div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <span class="status">🔲 Coming soon</span>
+                <h3>End-to-End Data Pipeline Platform</h3>
+            </div>
+            <div class="card">
+                <span class="status">🔲 Coming soon</span>
+                <h3>Internal Anti-Cheat Investigator Tool</h3>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Toolkit</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Languages &amp; tools</h3>
+                <ul>
+                    <li>Python for analysis, modelling and scripting</li>
+                    <li>SQL for advanced querying, feature engineering and KPIs</li>
+                    <li>Jupyter notebooks</li>
+                    <li>Git &amp; GitHub</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Data &amp; infrastructure</h3>
+                <ul>
+                    <li>PostgreSQL schema design with raw and curated layers, plus KPI views</li>
+                    <li>Python ETL with SQL transformations</li>
+                    <li>Data quality checks and monitoring</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Analytics &amp; ML</h3>
+                <ul>
+                    <li>EDA and visualisation</li>
+                    <li>KPI design: ARPU, retention, funnels, suspicion scores</li>
+                    <li>Classification with LR, Random Forest and XGBoost</li>
+                    <li>ROC-AUC, PR curves and feature importance</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Looking for</h2>
+        <p class="muted">Data Scientist roles in Games, Product or Commercial · Data Scientist in Anti-Cheat / Game Security · Analytics Engineer</p>
+    </section>
+
+    <footer>
+        <a href="https://github.com/maxipagliero">github.com/maxipagliero</a>
+    </footer>
+</main>
 </body>
 </html>
